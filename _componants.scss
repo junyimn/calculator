@@ -1,0 +1,18 @@
+@use "./base" as *;
+
+.calGrid {
+  button {
+    cursor: pointer;
+    font-size: 2rem;
+    outline: none;
+    background-color: $color-primary;
+    color: whitesmoke;
+    font: $font;
+  }
+
+  button:hover {
+    background-color: yellow;
+  }
+
+  
+}

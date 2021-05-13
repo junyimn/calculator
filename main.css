@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&family=Roboto:wght@100&display=swap");
+* *::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.calGrid button {
+  cursor: pointer;
+  font-size: 2rem;
+  outline: none;
+  background-color: #0ff1ce;
+  color: whitesmoke;
+  font: "Orbitrion", "Roboto";
+}
+.calGrid button:hover {
+  background-color: yellow;
+}
+.calGrid-output {
+  grid-column: 1/-1;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  font-family: "Orbitrion", "Roboto";
+  color: #0ff1ce;
+}
+
+.calGrid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+.calGrid .span-2 {
+  grid-column: span 2;
+}
+.calGrid-output {
+  grid-column: 1/-1;
+  background-color: whitesmoke(0, 0, 0, 0.75);
+}
