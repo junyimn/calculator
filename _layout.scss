@@ -7,7 +7,7 @@ h1 {
   font-family: $font;
   color: $color-primary;
 }
-ß
+
 .calGrid {
   display: grid;
   justify-content: center;
@@ -22,6 +22,26 @@ h1 {
 
   &-output {
     grid-column: 1 / -1;
-    background-color: (0, 0, 0, 0.75);
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: honeydew;
+    height: 100%;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border: hotpink solid 2px;
+    border-radius: 5%;
+
+    &__previous {
+      font-size: 1.5rem;
+      font-family: $font;
+    }
+
+    &__current {
+      font-family: $font;
+      font-size: 2.5rem;
+    }
   }
 }

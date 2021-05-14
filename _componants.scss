@@ -4,15 +4,14 @@
   button {
     cursor: pointer;
     font-size: 2rem;
-    outline: none;
+    border-color: hotpink;
     background-color: $color-primary;
     color: whitesmoke;
-    font: $font;
+    font-family: $font;
+    border-radius: 5%;
   }
 
   button:hover {
     background-color: yellow;
   }
-
-  
 }

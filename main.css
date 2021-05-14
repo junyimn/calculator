@@ -9,17 +9,14 @@
 .calGrid button {
   cursor: pointer;
   font-size: 2rem;
-  outline: none;
+  border-color: hotpink;
   background-color: #0ff1ce;
   color: whitesmoke;
-  font: "Orbitrion", "Roboto";
+  font-family: "Orbitrion", "Roboto";
+  border-radius: 5%;
 }
 .calGrid button:hover {
   background-color: yellow;
-}
-.calGrid-output {
-  grid-column: 1/-1;
-  background-color: rgba(0, 0, 0, 0.75);
 }
 
 h1 {
@@ -43,5 +40,23 @@ h1 {
 }
 .calGrid-output {
   grid-column: 1/-1;
-  background-color: whitesmoke(0, 0, 0, 0.75);
+  display: flex;
+  align-self: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: honeydew;
+  height: 100%;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  border: hotpink solid 2px;
+  border-radius: 5%;
+}
+.calGrid-output__previous {
+  font-size: 1.5rem;
+  font-family: "Orbitrion", "Roboto";
+}
+.calGrid-output__current {
+  font-family: "Orbitrion", "Roboto";
+  font-size: 2.5rem;
 }

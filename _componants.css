@@ -9,10 +9,11 @@
 .calGrid button {
   cursor: pointer;
   font-size: 2rem;
-  outline: none;
+  border-color: hotpink;
   background-color: #0ff1ce;
   color: whitesmoke;
   font: "Orbitrion", "Roboto";
+  border-radius: 5%;
 }
 .calGrid button:hover {
   background-color: yellow;
