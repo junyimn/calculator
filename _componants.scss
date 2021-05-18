@@ -1,17 +1,42 @@
 @use "./base" as *;
 
-.calGrid {
-  button {
-    cursor: pointer;
-    font-size: 2rem;
-    border-color: hotpink;
-    background-color: $color-primary;
-    color: whitesmoke;
-    font-family: $font;
-    border-radius: 5%;
-  }
+.display {
+  background-color: rgb(182, 182, 182);
+  height: 100px;
+  width: 100%;
+  text-align: right;
+  padding: 20px;
+  font-size: 30px;
+  position: relative;
+}
 
-  button:hover {
-    background-color: yellow;
-  }
+.display-1 {
+  opacity: 0.4;
+  font-size: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.all_button {
+  color: #ff21a3;
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+}
+
+.button {
+  border: 0.5px $color-tertiary solid;
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgb(30, 43, 46);
+}
+.btn-0 {
+  grid-column: 1/3;
 }

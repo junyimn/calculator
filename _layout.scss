@@ -1,47 +1,34 @@
 @use "./base" as *;
 
-h1 {
-  display: flex;
-  justify-content: center;
-  margin-top: 2%;
+html {
   font-family: $font;
-  color: $color-primary;
+}
+section {
+  background: rgb(21, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(21, 0, 36, 1) 0%,
+    rgba(171, 33, 158, 1) 35%,
+    rgba(0, 255, 248, 1) 100%
+  );
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 90%;
+  max-width: 400px;
+  background-color: $color-primary;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.calGrid {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  min-height: 100vh;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
-
-  .span-2 {
-    grid-column: span 2;
-  }
-
-  &-output {
-    grid-column: 1 / -1;
-    display: flex;
-    align-self: flex-end;
-    justify-content: space-around;
-    flex-direction: column;
-    background-color: honeydew;
-    height: 100%;
-    padding: 10px;
-    word-wrap: break-word;
-    word-break: break-all;
-    border: hotpink solid 2px;
-    border-radius: 5%;
-
-    &__previous {
-      font-size: 1.5rem;
-      font-family: $font;
-    }
-
-    &__current {
-      font-family: $font;
-      font-size: 2.5rem;
-    }
-  }
+.temp-result {
+  position: absolute;
+  bottom: 0;
+  left: 10;
+  font-size: 20px;
+  // opacity: 0.3;
 }

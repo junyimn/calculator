@@ -1,62 +1,78 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&family=Roboto:wght@100&display=swap");
-* *::before,
-*::after {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.calGrid button {
-  cursor: pointer;
-  font-size: 2rem;
-  border-color: hotpink;
-  background-color: #0ff1ce;
-  color: whitesmoke;
-  font-family: "Orbitrion", "Roboto";
-  border-radius: 5%;
-}
-.calGrid button:hover {
-  background-color: yellow;
+.display {
+  background-color: #b6b6b6;
+  height: 100px;
+  width: 100%;
+  text-align: right;
+  padding: 20px;
+  font-size: 30px;
+  position: relative;
 }
 
-h1 {
-  display: flex;
-  justify-content: center;
-  margin-top: 2%;
-  font-family: "Orbitrion", "Roboto";
-  color: #0ff1ce;
+.display-1 {
+  opacity: 0.4;
+  font-size: 20px;
+  height: 20px;
+  overflow: hidden;
 }
 
-.calGrid {
+.all_button {
+  color: #ff21a3;
   display: grid;
-  justify-content: center;
-  align-content: center;
-  min-height: 100vh;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  grid-template: repeat(4, 1fr)/repeat(4, 1fr);
 }
-.calGrid .span-2 {
-  grid-column: span 2;
-}
-.calGrid-output {
-  grid-column: 1/-1;
+
+.button {
+  border: 0.5px #ab219e solid;
+  display: inline-block;
+  height: 100px;
+  width: 100%;
   display: flex;
-  align-self: flex-end;
-  justify-content: space-around;
-  flex-direction: column;
-  background-color: honeydew;
-  height: 100%;
-  padding: 10px;
-  word-wrap: break-word;
-  word-break: break-all;
-  border: hotpink solid 2px;
-  border-radius: 5%;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
 }
-.calGrid-output__previous {
-  font-size: 1.5rem;
+
+.button:hover {
+  background-color: #1e2b2e;
+}
+
+.btn-0 {
+  grid-column: 1/3;
+}
+
+html {
   font-family: "Orbitrion", "Roboto";
 }
-.calGrid-output__current {
-  font-family: "Orbitrion", "Roboto";
-  font-size: 2.5rem;
+
+section {
+  background: #150024;
+  background: linear-gradient(90deg, #150024 0%, #ab219e 35%, #00fff8 100%);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  background-color: #0ff1ce;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.temp-result {
+  position: absolute;
+  bottom: 0;
+  left: 10;
+  font-size: 20px;
 }

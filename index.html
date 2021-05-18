@@ -4,35 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calux the Calculator</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div class="calGrid">
-      <div class="calGrid-output">
-        <div data-previous class="calGrid-output__previous"></div>
-        <div data-current class="calGrid-output__current"></div>
+    <section>
+      <div class="container">
+        <div class="calculator">
+          <div class="display">
+            <div class="display-1">0</div>
+            <div class="display-2">0</div>
+            <div class="temp-result"></div>
+          </div>
+          <div class="all_button">
+            <div class="button all-clear">C</div>
+            <div class="button last-entity-clear">CE</div>
+            <div class="button operation">%</div>
+            <div class="button operation">/</div>
+            <div class="button number">7</div>
+            <div class="button number">8</div>
+            <div class="button number">9</div>
+            <div class="button operation">x</div>
+            <div class="button number">4</div>
+            <div class="button number">5</div>
+            <div class="button number">6</div>
+            <div class="button operation">-</div>
+            <div class="button number">1</div>
+            <div class="button number">2</div>
+            <div class="button number">3</div>
+            <div class="button operation">+</div>
+            <div class="button btn-0 number">0</div>
+            <div class="button number dot">.</div>
+            <div class="button equal">=</div>
+          </div>
+        </div>
       </div>
-      <button data-all-clear class="span-2">AC</button>
-      <button data-delete>Del</button>
-      <button data-operation>÷</button>
-      <button data-number>1</button>
-      <button data-number>2</button>
-      <button data-number>3</button>
-      <button data-operation>*</button>
-      <button data-number>4</button>
-      <button data-number>5</button>
-      <button data-number>6</button>
-      <button data-operation>+</button>
-      <button data-number>7</button>
-      <button data-number>8</button>
-      <button data-number>9</button>
-      <button data-operation>-</button>
-      <button data-number>.</button>
-      <button data-number>0</button>
-      <button data-equals class="span-2">=</button>
-    </div>
-  </body>
+    </section>
 
-  <script src="/main.js"></script>
+    <script src="/main.js"></script>
+  </body>
 </html>
