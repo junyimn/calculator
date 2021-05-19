@@ -6,7 +6,7 @@
 }
 
 .display {
-  background-color: #b6b6b6;
+  background-color: gainsboro;
   height: 100px;
   width: 100%;
   text-align: right;
@@ -50,7 +50,7 @@
 }
 
 html {
-  font-family: "Play";
+  font-family: "Play", "Orbitron", "Overpass";
 }
 
 section {

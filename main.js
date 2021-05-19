@@ -1,102 +1,106 @@
-const display1El = document.querySelector(".display-1");
-const display2El = document.querySelector(".display-2");
-const tempResultEl = document.querySelector(".temp-result");
-const numbersEl = document.querySelectorAll(".number");
-const operationEl = document.querySelectorAll(".operation");
-const equalEl = document.querySelector(".equal");
-const clearAllEl = document.querySelector(".all-clear");
-const clearLastEl = document.querySelector(".last-entity-clear");
+// link html classes to js variables
+const displayPrevious = document.querySelector(".display-1");
+const displayCurrent = document.querySelector(".display-2");
+const tempResultDisplay = document.querySelector(".temp-result");
+const numbersButton = document.querySelectorAll(".number");
+const operationButtons = document.querySelectorAll(".operation");
+const equalButton = document.querySelector(".equal");
+const clearAllButton = document.querySelector(".all-clear");
+const clearLastButton = document.querySelector(".last-entity-clear");
 
 // initalisng the variables throughout the calculator
-// dis1Num + dis2Num = stores the number into a string
-let dis1Num = "";
-let dis2Num = "";
+// previousNum + currentNum = stores the number into a string
+let previousNum = "";
+let currentNum = "";
 // set result to null = undeclare the result
-let result = null;
+let result = "";
 let lastOperation = "";
-let haveDot = false;
+let hasDecimal = false;
 
-// prevent decimal point from being pressed more than once
-// if the number has .
-numbersEl.forEach((number) => {
+// function which sets the number pressed by user and prevents multiple decimals being displayed
+numbersButton.forEach((number) => {
   number.addEventListener("click", (event) => {
-    if (event.target.innerText === "." && !haveDot) {
-      // if clicked on . and haveDot is false = execute this
-      haveDot = true;
-    } else if (event.target.innerText === "." && haveDot) {
-      // exit out the function
+    if (event.target.innerText === "." && !hasDecimal) {
+      // checks current input is a decimal && decimal does not exsist on display
+      // prevents multiple decimals being added to the calculator
+      hasDecimal = true;
+    } else if (event.target.innerText === "." && hasDecimal) {
+      // exit out the function if a decimal already exsists
       return;
     }
-    dis2Num += event.target.innerText; // excute this code if no .
-    display2El.innerText = dis2Num; // updates the display
+    currentNum += event.target.innerText; // assign the user input to currentNum
+    displayCurrent.innerText = currentNum; // updates the display
   });
 });
 
-// add event listener to the op buttons
-operationEl.forEach((operation) => {
+// add event listener to the operation buttons
+operationButtons.forEach((operation) => {
   operation.addEventListener("click", (event) => {
-    if (!dis2Num) return;
-    haveDot = false;
-    const operationName = event.target.innerText;
-    if (dis1Num && dis2Num && lastOperation) {
+    if (currentNum === "") return;
+    hasDecimal = false;
+    const operationName = event.target.innerText; // storing the operation value
+    // checks for valid equation
+    if (previousNum && currentNum && lastOperation) {
       mathOperation();
     } else {
-      result = parseFloat(dis2Num);
+      result = parseFloat(currentNum);
     }
-    clearVar(operationName); // clears display
-    lastOperation = operationName; // keeps track of last op
-    console.log(result);
+    clearDisplayedEquation(operationName); // clears main display
+    lastOperation = operationName; // keeps track of last operation
   });
 });
 
-// function to clears display + values
-const clearVar = (name = "") => {
-  dis1Num += dis2Num + " " + name + " ";
-  display1El.innerText = dis1Num;
-  display2El.innerText = "";
-  dis2Num = "";
-  tempResultEl.innerText = result;
+// function to clears main display and move current displayed result to temp and current displayed values
+const clearDisplayedEquation = (operationName = "") => {
+  previousNum += currentNum + " " + operationName + " ";
+  displayPrevious.innerText = previousNum;
+  displayCurrent.innerText = "";
+  currentNum = "";
+  tempResultDisplay.innerText = result;
 };
 
 // functions to calculate the equations
 const mathOperation = () => {
   if (lastOperation === "x") {
-    result = parseFloat(result) * parseFloat(dis2Num);
+    result = parseFloat(result) * parseFloat(currentNum);
   } else if (lastOperation === "+") {
-    result = parseFloat(result) + parseFloat(dis2Num);
+    result = parseFloat(result) + parseFloat(currentNum);
   } else if (lastOperation === "-") {
-    result = parseFloat(result) - parseFloat(dis2Num);
+    result = parseFloat(result) - parseFloat(currentNum);
   } else if (lastOperation === "/") {
-    result = parseFloat(result) / parseFloat(dis2Num);
+    result = parseFloat(result) / parseFloat(currentNum);
   } else if (lastOperation === "%") {
-    result = parseFloat(result) % parseFloat(dis2Num);
+    result = parseFloat(result) % parseFloat(currentNum);
   }
 };
 
 // equal button whhich show thes the result whilst clearing the temp display
-equalEl.addEventListener("click", () => {
-  if (!dis2Num || !dis1Num) return;
-  haveDot = false;
+equalButton.addEventListener("click", () => {
+  if (currentNum === "" || previousNum === "") return;
+  hasDecimal = false;
   mathOperation();
-  clearVar();
-  display2El.innerText = result;
-  tempResultEl.innerText = "";
-  dis2Num = result;
-  dis1Num = "";
+  clearDisplayedEquation();
+  displayCurrent.innerText = result;
+  tempResultDisplay.innerText = "";
+  currentNum = result;
+  previousNum = "";
 });
 
 // function which acts as an all clear button to clear eveything
-clearAllEl.addEventListener("click", () => {
-  dis1Num = "";
-  dis2Num = "";
-  display1El.innerText = "";
-  display2El.innerText = "";
+clearAllButton.addEventListener("click", () => {
+  previousNum = "";
+  currentNum = "";
+  displayPrevious.innerText = "";
+  displayCurrent.innerText = "";
   result = "";
-  tempResultEl.innerText = "";
+  tempResultDisplay.innerText = "";
+  hasDecimal = false;
 });
 
 // function which clears  the last entry into the calculator
-clearLastEl.addEventListener("click", () => {
-  display2El.innerText = "";
-  dis2Num = "";
+clearLastButton.addEventListener("click", () => {
+  displayCurrent.innerText = "";
+  currel = false;
 });
+ntNum = "";
+hasDecima;
